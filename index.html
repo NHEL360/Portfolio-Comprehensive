@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhel Meynard Licera | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+<nav>
+    <h2 class="logo">NML</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="dark-btn" onclick="app.toggleDark()">🌙</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="home container">
+    <div class="profile">
+        <img src="pictures/pp.jpg" alt="Profile Picture">
+    </div>
+
+    <div class="intro">
+        <h1>Hi, I'm <span id="typing-name"></span></h1>
+        <p id="role"></p>
+
+        <div class="about">
+            <h3>About Me</h3>
+            <p>
+                I'm <b>Nhel Meynard Licera</b>, an aspiring computer technician.
+            </p>
+        </div>
+
+        <div class="skills">
+            <h3>Skills</h3>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Java</span>
+        </div>
+
+        <!-- Resume Button -->
+        <div style="margin-top:15px;">
+            <!-- Updated download button -->
+            <a href="resume.pdf" target="_blank" download="Nhel_Licera_Resume.pdf" class="resume-btn">
+                <i class="fa-solid fa-file-pdf"></i> Download Resume
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section container">
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+        <div class="project-card">
+            <img src="pictures/pg.png" alt="Project Image">
+            <h3>Coop PaBOOKid</h3>
+            <p>Information System</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section container">
+    <h2>Contact</h2>
+
+    <div class="contact-box">
+        <p>
+            <i class="fa-solid fa-envelope"></i>
+            nhelmeynard@gmail.com
+        </p>
+
+        <p>
+            <i class="fa-solid fa-phone"></i>
+            +63 9203905368
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Nhel Meynard Licera</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
