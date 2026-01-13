@@ -40,11 +40,6 @@ nav ul {
 nav a {
   color: white;
   text-decoration: none;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #e63946;
 }
 
 .dark-btn {
@@ -118,7 +113,7 @@ nav a:hover {
 /* ===================== PROJECTS ===================== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
   gap: 20px;
   margin-top: 20px;
 }
@@ -236,6 +231,23 @@ footer {
 
 .dark footer {
   background: #1e1e1e;
+}
+
+/* ===================== Buttons ===================== */
+.resume-btn {
+  display: inline-block;
+  background: #e63946;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.resume-btn:hover {
+  background: #c1121f;
 }
 
 /* ===================== MEDIA QUERIES ===================== */
