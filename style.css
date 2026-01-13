@@ -1,3 +1,4 @@
+/* ===================== Reset & Base Styles ===================== */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +17,7 @@ body {
   color: white;
 }
 
-/* NAV */
+/* ===================== NAVIGATION ===================== */
 nav {
   display: flex;
   justify-content: space-between;
@@ -39,6 +40,11 @@ nav ul {
 nav a {
   color: white;
   text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #e63946;
 }
 
 .dark-btn {
@@ -49,11 +55,7 @@ nav a {
   cursor: pointer;
 }
 
-.container {
-  padding: 120px 40px;
-}
-
-/* TOGGLE BUTTON */
+/* ===================== TOGGLE BUTTON ===================== */
 .view-toggle {
   text-align: center;
   margin-top: 90px;
@@ -66,13 +68,19 @@ nav a {
   padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .view-toggle button:hover {
   background: #c1121f;
 }
 
-/* HOME */
+/* ===================== CONTAINER ===================== */
+.container {
+  padding: 120px 40px;
+}
+
+/* ===================== HOME / INTRO ===================== */
 .home {
   display: flex;
   gap: 50px;
@@ -88,19 +96,29 @@ nav a {
   object-fit: cover;
 }
 
+.intro h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
 .skills span {
+  display: inline-block;
   background: #333;
   color: white;
   padding: 5px 10px;
-  margin: 5px;
+  margin: 5px 5px 0 0;
   border-radius: 5px;
-  display: inline-block;
+  font-size: 14px;
 }
 
-/* PROJECTS */
+.dark .skills span {
+  background: #555;
+}
+
+/* ===================== PROJECTS ===================== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
@@ -111,6 +129,7 @@ nav a {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 .project-card img {
@@ -118,11 +137,21 @@ nav a {
   border-radius: 8px;
 }
 
-.dark .project-card {
-  background: #1e1e1e;
+.project-card h3 {
+  margin: 10px 0 5px;
 }
 
-/* RESUME STYLE */
+.project-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.dark .project-card {
+  background: #1e1e1e;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+
+/* ===================== RESUME VIEW ===================== */
 .resume {
   max-width: 900px;
   margin: auto;
@@ -146,6 +175,16 @@ nav a {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  object-fit: cover;
+}
+
+.resume-header h1 {
+  font-size: 28px;
+}
+
+.resume-header h3 {
+  color: #e63946;
+  margin: 5px 0;
 }
 
 .resume-section {
@@ -160,9 +199,33 @@ nav a {
 
 .resume-list {
   list-style: none;
+  padding-left: 0;
 }
 
-/* FOOTER */
+.resume-list li {
+  margin-bottom: 5px;
+}
+
+/* ===================== CONTACT ===================== */
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.contact-box p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.contact-box i {
+  color: #e63946;
+}
+
+/* ===================== FOOTER ===================== */
 footer {
   text-align: center;
   padding: 20px;
@@ -173,4 +236,22 @@ footer {
 
 .dark footer {
   background: #1e1e1e;
+}
+
+/* ===================== MEDIA QUERIES ===================== */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .resume-header {
+    flex-direction: column;
+    text-align: center;
+  }
 }

@@ -57,3 +57,27 @@ function toggleView() {
     btn.textContent = "💼 Portfolio View";
   }
 }
+
+// ===== GO TO RESUME =====
+function goToResume() {
+    const portfolio = document.getElementById("portfolioView");
+    const resume = document.getElementById("resumeView");
+    const btn = document.getElementById("toggleBtn");
+
+    portfolio.style.display = "none";
+    resume.style.display = "block";
+    btn.textContent = "💼 Portfolio View";
+}
+
+// ===== PRINT / SAVE AS PDF =====
+function printResume() {
+    const resumeSection = document.getElementById("resumeView");
+    const originalBody = document.body.innerHTML;
+
+    document.body.innerHTML = resumeSection.innerHTML;
+    window.print();
+    document.body.innerHTML = originalBody;
+
+    // Reload to restore scripts
+    window.location.reload();
+}
