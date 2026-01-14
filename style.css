@@ -68,7 +68,16 @@ nav a {
   object-fit: cover;
 }
 
-/* SKILLS */
+/* ABOUT spacing */
+.about {
+  margin-bottom: 15px;
+}
+
+/* ✅ SKILLS MOVED DOWN */
+.skills {
+  margin-top: 25px;
+}
+
 .skills span {
   background: #333;
   color: white;
@@ -179,7 +188,7 @@ footer {
   color: white;
 }
 
-/* REVEAL ANIMATION */
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -189,6 +198,18 @@ footer {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skills {
+    margin-top: 15px;
+  }
 }
 
 /* PRINT */

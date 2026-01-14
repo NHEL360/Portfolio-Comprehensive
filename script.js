@@ -57,7 +57,7 @@ function printResume() {
   window.print();
 }
 
-// REVEAL ON SCROLL
+// REVEAL
 function reveal() {
   const reveals = document.querySelectorAll(".reveal");
   reveals.forEach(r => {
