@@ -1,12 +1,12 @@
-// ===== DARK MODE =====
+// DARK MODE
 const app = {
-  toggleDark: function() {
+  toggleDark() {
     document.body.classList.toggle("dark");
     localStorage.setItem("darkMode",
       document.body.classList.contains("dark") ? "enabled" : "disabled"
     );
   },
-  loadDarkMode: function() {
+  loadDarkMode() {
     if(localStorage.getItem("darkMode") === "enabled") {
       document.body.classList.add("dark");
     }
@@ -14,7 +14,7 @@ const app = {
 };
 app.loadDarkMode();
 
-// ===== TYPING EFFECT =====
+// TYPING EFFECT
 const typingName = document.getElementById("typing-name");
 const role = document.getElementById("role");
 
@@ -26,8 +26,7 @@ function typeText(element, text, speed) {
   element.textContent = "";
   function typing() {
     if (i < text.length) {
-      element.textContent += text.charAt(i);
-      i++;
+      element.textContent += text.charAt(i++);
       setTimeout(typing, speed);
     }
   }
@@ -36,48 +35,30 @@ function typeText(element, text, speed) {
 
 window.addEventListener("DOMContentLoaded", () => {
   typeText(typingName, myName, 120);
-  setTimeout(() => {
-    typeText(role, myRole, 80);
-  }, myName.length * 120 + 500);
+  setTimeout(() => typeText(role, myRole, 80), myName.length * 120 + 300);
 });
 
-// ===== VIEW TOGGLE =====
-function toggleView() {
-  const portfolio = document.getElementById("portfolioView");
-  const resume = document.getElementById("resumeView");
-  const btn = document.getElementById("toggleBtn");
-
-  if (portfolio.style.display === "none") {
-    portfolio.style.display = "block";
-    resume.style.display = "none";
-    btn.textContent = "📄 Resume View";
-  } else {
-    portfolio.style.display = "none";
-    resume.style.display = "block";
-    btn.textContent = "💼 Portfolio View";
-  }
-}
-
-// ===== GO TO RESUME =====
+// SMOOTH RESUME VIEW
 function goToResume() {
-    const portfolio = document.getElementById("portfolioView");
-    const resume = document.getElementById("resumeView");
-    const btn = document.getElementById("toggleBtn");
-
-    portfolio.style.display = "none";
-    resume.style.display = "block";
-    btn.textContent = "💼 Portfolio View";
+  document.getElementById("resumeView").scrollIntoView({ behavior: "smooth" });
 }
 
-// ===== PRINT / SAVE AS PDF =====
+// PRINT
 function printResume() {
-    const resumeSection = document.getElementById("resumeView");
-    const originalBody = document.body.innerHTML;
-
-    document.body.innerHTML = resumeSection.innerHTML;
-    window.print();
-    document.body.innerHTML = originalBody;
-
-    // Reload to restore scripts
-    window.location.reload();
+  window.print();
 }
+
+// REVEAL ON SCROLL
+function reveal() {
+  const reveals = document.querySelectorAll(".reveal");
+  reveals.forEach(r => {
+    const windowHeight = window.innerHeight;
+    const elementTop = r.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 100) {
+      r.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);

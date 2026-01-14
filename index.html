@@ -1,173 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Nhel Meynard Licera | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <meta charset="UTF-8">
+  <title>Nhel Meynard Licera | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
 
 <nav>
-    <h2 class="logo">  </h2>
-    <ul>
-        <li><a href="#portfolioView">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="dark-btn" onclick="app.toggleDark()">🌙</button>
+  <h2 class="logo"></h2>
+  <ul>
+    <li><a href="#portfolioView" onclick="showPortfolio()">Home</a></li>
+    <li><a href="#projects" onclick="showPortfolio()">Projects</a></li>
+    <li><a href="#contact" onclick="showPortfolio()">Contact</a></li>
+    <li><a href="#" onclick="showResume()">Resume</a></li>
+  </ul>
+  <button class="dark-btn" onclick="app.toggleDark()">🌙</button>
 </nav>
 
 <!-- ===== PORTFOLIO VIEW ===== -->
 <section id="portfolioView">
 
   <!-- HOME -->
-  <section id="home" class="home container">
-      <div class="profile">
-          <img src="pictures/pf.jpg" alt="Profile Picture">
+  <section id="home" class="home container reveal">
+    <div class="profile">
+      <img src="pictures/pf.jpg" alt="Profile Picture">
+    </div>
+
+    <div class="intro">
+      <h1>Hi, I'm <span id="typing-name"></span></h1>
+      <p id="role"></p>
+
+      <div class="about">
+        <h3>About Me</h3>
+        <p>
+          I'm <b>Nhel Meynard Licera</b>, skilled in diagnosing, repairing, 
+          and maintaining computer hardware and software systems. 
+          Passionate about troubleshooting and IT solutions.
+        </p>
       </div>
 
-      <div class="intro">
-          <h1>Hi, I'm <span id="typing-name"></span></h1>
-          <p id="role"></p>
-
-          <div class="about">
-              <h3>About Me</h3>
-              <p>
-                  I'm <b>Nhel Meynard Licera</b>, Skilled in diagnosing, repairing, and maintaining computer hardware and software systems. Experienced in troubleshooting hardware failures, installing and configuring operating systems and applications, and ensuring network connectivity. Adept at providing technical support to end-users, performing system upgrades, and maintaining data integrity. Strong problem-solving abilities with a commitment to efficient and reliable IT solutions.
-              </p>
-          </div>
-
-          <div class="skills">
-              <h3>SKILLS</h3>
-              <span>networking</span>
-              <span>security</span>
-              <span>OS</span>
-              <span>soft skills</span>
-              <span>hardware/software</span>
-          </div>
-
-          <div style="margin-top:15px;">
-              <button class="resume-btn" onclick="goToResume()">
-                  <i class="fa-solid fa-file-pdf"></i> View Resume
-              </button>
-          </div>
+      <div class="skills">
+        <h3>SKILLS</h3>
+        <span>Networking</span>
+        <span>Security</span>
+        <span>OS</span>
+        <span>Soft Skills</span>
+        <span>Hardware/Software</span>
       </div>
+
+      <div style="margin-top:15px;">
+        <button class="resume-btn" onclick="showResume()">
+          <i class="fa-solid fa-file-pdf"></i> View Resume
+        </button>
+      </div>
+    </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="section container">
-      <h2>Projects</h2>
-
-      <div class="projects-grid">
-          <div class="project-card">
-              <img src="pictures/pg.png" alt="Project Image">
-              <h3>Coop PaBOOKid</h3>
-              <p>Information System</p>
-          </div>
+  <section id="projects" class="section container reveal">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="pictures/pg.png" alt="Project Image">
+        <h3>Coop PaBOOKid</h3>
+        <p>Information System</p>
       </div>
+    </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section container">
-      <h2>Contact</h2>
-      <div class="contact-box">
-          <p><i class="fa-solid fa-envelope"></i> nhelmeynard@gmail.com</p>
-          <p><i class="fa-solid fa-phone"></i> +63 9203905368</p>
-      </div>
+  <section id="contact" class="section container reveal">
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <p><i class="fa-solid fa-envelope"></i> nhelmeynard@gmail.com</p>
+      <p><i class="fa-solid fa-phone"></i> +63 9203905368</p>
+    </div>
   </section>
 
 </section>
 
 
-<!-- ===== RESUME VIEW ===== -->
+<!-- ===== RESUME VIEW (HIDDEN BY DEFAULT) ===== -->
 <section id="resumeView" class="resume container" style="display:none;">
 
-  <div class="resume-header">
-      <img src="pictures/pf.jpg" alt="Profile Picture">
-      <div>
-          <h1>Nhel Meynard Licera</h1>
-          <h3>Aspiring Computer Technician</h3>
-          <p>📧 nhelmeynard@gmail.com</p>
-          <p>📱 +63 9203905368</p>
-      </div>
+  <div class="resume-header reveal">
+    <img src="pictures/pf.jpg" alt="Profile Picture">
+    <div>
+      <h1>Nhel Meynard Licera</h1>
+      <h3>Aspiring Computer Technician</h3>
+      <p>📧 nhelmeynard@gmail.com</p>
+      <p>📱 +63 9203905368</p>
+    </div>
   </div>
 
   <hr>
 
-  <div class="resume-section">
-      <h2>About Me</h2>
-      <p>
-        I'm Nhel Meynard Licera, an aspiring computer technician with knowledge
-        in web development and basic programming. Passionate about learning
-        new technologies and improving technical skills.
-      </p>
+  <div class="resume-section reveal">
+    <h2>About Me</h2>
+    <p>
+      An aspiring computer technician passionate about troubleshooting, 
+      system maintenance, and IT support.
+    </p>
   </div>
 
-  <div class="resume-section">
-      <h2>Skills</h2>
-      <ul class="resume-list">
-          <li>Networking</li>
-          <li>Security</li>
-          <li>Operating Systems</li>
-          <li>Soft Skills</li>
-          <li>Hardware / Software Troubleshooting</li>
-      </ul>
+  <div class="resume-section reveal">
+    <h2>Skills</h2>
+    <ul class="resume-list">
+      <li>Networking</li>
+      <li>Security</li>
+      <li>Operating Systems</li>
+      <li>Hardware / Software Troubleshooting</li>
+      <li>Customer Support</li>
+    </ul>
   </div>
 
-  <!-- ✅ EDUCATION SECTION -->
-  <div class="resume-section">
-      <h2>Education</h2>
-      <ul class="resume-list">
-          <li>
-              <b>Bachelor of Science in Information Technology</b><br>
-              (Your College Name Here)<br>
-              2022 – Present
-          </li>
-          <br>
-          <li>
-              <b>Senior High School – ICT Strand</b><br>
-              Manolo Fortich National High School<br>
-              2020 – 2022
-          </li>
-      </ul>
+  <div class="resume-section reveal">
+    <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+    <ul class="resume-list">
+      <li>
+        <b>BS in Information Technology</b><br>
+        (Your College Name)<br>
+        2022 – Present
+      </li>
+      <li>
+        <b>Senior High School – ICT Strand</b><br>
+        Manolo Fortich National High School<br>
+        2020 – 2022
+      </li>
+    </ul>
   </div>
 
-  <div class="resume-section">
-      <h2>Projects</h2>
-      <div class="project-card">
-          <img src="pictures/pg.png" alt="Project Image">
-          <h3>Coop PaBOOKid</h3>
-          <p>Information System</p>
-      </div>
+  <div class="resume-section reveal">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <img src="pictures/pg.png" alt="Project Image">
+      <h3>Coop PaBOOKid</h3>
+      <p>Information System</p>
+    </div>
   </div>
 
-  <!-- ✅ REFERENCES SECTION -->
-  <div class="resume-section">
-      <h2>References</h2>
-      <p>Available upon request.</p>
+  <div class="resume-section reveal">
+    <h2><i class="fa-solid fa-user-tie"></i> References</h2>
+    <p>Available upon request.</p>
   </div>
 
-  <!-- CONTACT -->
-  <div class="resume-section">
-      <h2>Contact</h2>
-      <p>📧 nhelmeynard@gmail.com</p>
-      <p>📱 +63 9203905368</p>
+  <div class="resume-section reveal">
+    <h2>Contact</h2>
+    <p>📧 nhelmeynard@gmail.com</p>
+    <p>📱 +63 9203905368</p>
   </div>
 
   <div style="margin-top:15px;">
-      <button class="resume-btn" onclick="printResume()">
-          <i class="fa-solid fa-print"></i> Print / Save as PDF
-      </button>
+    <button class="resume-btn" onclick="printResume()">
+      <i class="fa-solid fa-print"></i> Print / Save as PDF
+    </button>
   </div>
 
 </section>
 
 
 <footer>
-    <p>© 2026 Nhel Meynard Licera</p>
+  <p>© 2026 Nhel Meynard Licera</p>
 </footer>
 
 <script src="script.js"></script>
