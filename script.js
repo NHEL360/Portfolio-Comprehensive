@@ -38,9 +38,18 @@ window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => typeText(role, myRole, 80), myName.length * 120 + 300);
 });
 
-// SMOOTH RESUME VIEW
-function goToResume() {
-  document.getElementById("resumeView").scrollIntoView({ behavior: "smooth" });
+// SHOW RESUME
+function showResume() {
+  document.getElementById("portfolioView").style.display = "none";
+  document.getElementById("resumeView").style.display = "block";
+  window.scrollTo(0,0);
+}
+
+// SHOW PORTFOLIO
+function showPortfolio() {
+  document.getElementById("resumeView").style.display = "none";
+  document.getElementById("portfolioView").style.display = "block";
+  window.scrollTo(0,0);
 }
 
 // PRINT
